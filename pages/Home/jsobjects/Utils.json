@@ -1,0 +1,24 @@
+{
+  "unpublishedCollection": {
+    "name": "Utils",
+    "pageId": "Home",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tmyVar1: [],\n\tmyVar2: {},\n\tgetRefunds: () => {\n\t\tconst arr = GetAllOrders.data.map(x => parseInt(x.refundStatus))\n\t\treturn ((arr.reduce((a, b) => a + b, 0))/(GetAllOrders.data.length)).toFixed(2)\n\t},\n\tgetOnTimeDeliveries: () => {\n\t\tconst arr = GetAllOrders.data.map(x => parseInt(x.On_time))\n\t\treturn ((arr.reduce((a, b) => a + b, 0))/(GetAllOrders.data.length)).toFixed(2)\n\t},\n\tsearch: () => {\n\t\tif(Input1.text.length==0){\n\t\t\treturn getCustomer.data\n\t\t}\n\t\telse{\n\t\t\treturn(getAllCustomers.data.filter(word => word.CName.toLowerCase().includes(Input1.text.toLowerCase())))\n\t\t}\n\t}\n}",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": []
+      },
+      {
+        "name": "myVar2",
+        "value": {}
+      }
+    ]
+  },
+  "id": "Home_Utils",
+  "deleted": false,
+  "gitSyncId": "61d55a3da4437918c021e514_6218832f445a8d746a05eb41"
+}
